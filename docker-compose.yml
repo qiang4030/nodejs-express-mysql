@@ -11,10 +11,10 @@ services:
     environment:
       MYSQL_DATABASE: icoding
       MYSQL_USER: root
-      MYSQL_PASSWORD: 123456,
+      MYSQL_PASSWORD: 123456
       MYSQL_HOST: db
     ports:
-      - "3000:3000"
+      - "5000:5000"
     depends_on:
       - db
     restart: on-failure
