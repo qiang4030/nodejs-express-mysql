@@ -6,12 +6,12 @@
 - [安装项目所需依赖](#安装项目所需依赖)
 - [快速创建 Express web server 应用](#快速创建-express-web-server-应用)
 - [创建 SQL 表](#创建-sql-表)
-- [新建 ./src/config/dbconfig.js](#新建-srcconfigdbconfigjs)
-- [新建 ./src/models/db.js 创建数据库连接](#新建-srcmodelsdbjs-创建数据库连接)
+- [新建 ./web/config/dbconfig.js](#新建-webconfigdbconfigjs)
+- [新建 ./web/models/db.js 创建数据库连接](#新建-webmodelsdbjs-创建数据库连接)
 - [定义模型](#定义模型)
-- [新建 ./src/models/tutorial.model.js](#新建-srcmodelstutorialmodeljs)
-- [新建 ./src/controllers/tutorial.controller.js](#新建-srccontrollerstutorialcontrollerjs)
-- [新建 ./src/routes/tutorial.route.js](#新建-srcroutestutorialroutejs)
+- [新建 ./web/models/tutorial.model.js](#新建-webmodelstutorialmodeljs)
+- [新建 ./web/controllers/tutorial.controller.js](#新建-webcontrollerstutorialcontrollerjs)
+- [新建 ./web/routes/tutorial.route.js](#新建-webroutestutorialroutejs)
 - [新增以下路由](#新增以下路由)
   - [**create**,](#create)
     - [接口 URL](#接口-url)
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `tutorials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-## 新建 ./src/config/dbconfig.js
+## 新建 ./web/config/dbconfig.js
 
 ```js
 module.exports = {
@@ -111,7 +111,7 @@ module.exports = {
 };
 ```
 
-## 新建 ./src/models/db.js 创建数据库连接
+## 新建 ./web/models/db.js 创建数据库连接
 
 ```js
 const mysql = require("mysql");
@@ -128,7 +128,7 @@ module.exports = connection;
 
 ## 定义模型
 
-在 `./src/models` 目录下新建 `tutorial.js` 文件，在该文件中定义 `Tutorial` 构造器，实现以下功能
+在 `./web/models` 目录下新建 `tutorial.js` 文件，在该文件中定义 `Tutorial` 构造器，实现以下功能
 
 - 构建 Tutorial 对象
 - 通过 id 查找指定记录
@@ -138,15 +138,15 @@ module.exports = connection;
 - 删除某条 tutorial 记录
 - 删除所有 tutorial 记录
 
-## 新建 ./src/models/tutorial.model.js
+## 新建 ./web/models/tutorial.model.js
 
 该文件中定义了 MySQL 数据库操作相关的方法
 
-## 新建 ./src/controllers/tutorial.controller.js
+## 新建 ./web/controllers/tutorial.controller.js
 
 该文件中定义了处理前端请求、返回服务端响应等方法
 
-## 新建 ./src/routes/tutorial.route.js
+## 新建 ./web/routes/tutorial.route.js
 
 该文件中定义了 Express 服务端的路由接口
 
